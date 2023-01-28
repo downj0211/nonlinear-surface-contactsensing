@@ -1,0 +1,15 @@
+mesh_directory: "/home/down/Dropbox/code/Ubuntu/contactsensing_ws/src/ftsensor_can/meshes/sinewave_cover_lowscale.STL"
+
+mesh_transformation:
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+    - 1.0
+    - 0.0

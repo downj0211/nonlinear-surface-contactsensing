@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"   name="sinewave_surface">
+
+  <link name="base_link">
+    <visual>
+      <origin rpy="1.570796 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find contactsensing)/meshes/sinewave_cover_lowscale.stl"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="virtual" type="revolute">
+    <parent link="base_link"/>
+    <child link="virtual_link"/>
+    <origin xyz="0 0 0.599704"/>
+    <axis xyz="1 0 0" />
+    <limit effort="300" velocity="0.1" lower="-3.14" upper="3.14"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="virtual_link"/>
+</robot>

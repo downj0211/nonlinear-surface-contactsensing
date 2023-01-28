@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="model" default="$(find contactsensing)/urdf/sinewave_surface.urdf"/>
+  <arg name="rvizconfig" default="$(find contactsensing)/rviz/urdf.rviz" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+  <node name="node_ftread" pkg="nonlinear_surface_contactsensing" args="0 100" type="main_ftread" output="screen"/>
+  <node name="node_contactsensing" pkg="nonlinear_surface_contactsensing" type="main_ns_contactsensing" output="screen"/>
+</launch>
